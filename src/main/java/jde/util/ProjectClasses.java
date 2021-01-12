@@ -183,6 +183,8 @@ class ProjectClasses {
     // Also try the file listing the built-in classes for JDE 9+
     bootClassPathEntries.add(new ClassList());
 
+    // read class names from java 9+ modules
+    bootClassPathEntries.add(new JImageList());
   }
 
   static void addToBootClassPath(File file) throws IOException {
