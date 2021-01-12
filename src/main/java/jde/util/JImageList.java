@@ -18,6 +18,7 @@
 package jde.util;
 
 import java.io.BufferedReader;
+import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -99,10 +100,27 @@ public class JImageList extends ClassPathEntry {
       }
 
     } finally {
-      if(reader != null) {
-        reader.close();
-      }
+      closeQuietly(reader);
+      cleanupProcess(proc);
+    }
+  }
+
+  private static void cleanupProcess(Process proc) {
+    try {
+      closeQuietly(proc.getOutputStream());
+      closeQuietly(proc.getErrorStream());
+    } finally {
       proc.destroy();
+    }
+  }
+
+  private static void closeQuietly(Closeable c) {
+    if(c != null) {
+      try {
+        c.close();
+      } catch(IOException e) {
+        // ignored
+      }
     }
   }
 
