@@ -186,7 +186,7 @@ public class ConnectionImpl implements InvocationHandler, Connection {
     logger.debug(method.toString());
 
     List eval = new ArrayList();
-    eval.add(new Symbol("jdee-juci-invoke-elisp"));
+    eval.add(new Symbol("jde-juci-invoke-elisp"));
 
     List form = new ArrayList();
     form.add(new Symbol(Symbol.java2Elisp(method.getDeclaringClass().getName() + "." + method.getName())));

@@ -87,11 +87,11 @@ forms in that case.)]</i> </p>
 
 <p> On the Elisp side, in order to call this Java class, all you would
 need to do is invoke a JUCI helper function
-<code>jdee-juci-invoke-java</code> like this: </p>
+<code>jde-juci-invoke-java</code> like this: </p>
 
 <pre>
 (defun my-util-helper-do-something (arg)
-  (jdee-juci-invoke-java "my.util.HelperImpl" "doSomething" arg))
+  (jde-juci-invoke-java "my.util.HelperImpl" "doSomething" arg))
 </pre>
 
 <p> For Java code that calls Elisp, you declare just an interface.  On
@@ -138,12 +138,12 @@ algorithm to the fully qualified class name and method </p>
 
 <p>For example, the Java interface method
 <code>jde.foo.Bar.frobnicate()</code> would translate to
-<code>jdee-foo-bar-frobnicate</code> in Elisp.</p>
+<code>jde-foo-bar-frobnicate</code> in Elisp.</p>
 
 <p> The naming convention is also in effect in the other direction,
 except it is only suggested, not enforced (since the mapping using the
 above algorithm would be one Elisp name to many Java names and because
-the <code>jdee-juci-invoke-java</code> function takes a fully-qualified
+the <code>jde-juci-invoke-java</code> function takes a fully-qualified
 class name and a method name as arguments). </p>
 
 <a name="conversion" />
@@ -157,7 +157,7 @@ implemented by JUCI: </p>
 <table border="1" width="60%">
   <tr>
     <td align="center" colspan="2"><b>Elisp to Java conversion</b>
-    (via <code>jdee-juci-bshify-object</code> function)</td>
+    (via <code>jde-juci-bshify-object</code> function)</td>
   </tr>
   <tr>
     <td width="50%"><b>Elisp object</b></td>
@@ -294,15 +294,15 @@ look for aspects of JUCI's functionality:</p>
 	single-quote (') or the <code>(quote ...)</code> form.</li>
       </ul>
   </li>
-  <li> Elisp components (<code>jdee-juci.el</code> Elisp package) <br/>
+  <li> Elisp components (<code>jde-juci.el</code> Elisp package) <br/>
       <ul>
-	<li><code>jdee-juci-invoke-java, jdee-juci-invoke-script</code>
+	<li><code>jde-juci-invoke-java, jde-juci-invoke-script</code>
 	-- function used to invoke a Java object or Beanshell script
 	   through JUCI.</li>
-	<li><code>jdee-juci-invoke-elisp</code> -- function used by the
+	<li><code>jde-juci-invoke-elisp</code> -- function used by the
 	Java side of the JUCI infrastructure to execute an Elisp
 	function and return its results back to Java.</li>
-	<li><code>jdee-juci-bshify-object</code> -- function used to
+	<li><code>jde-juci-bshify-object</code> -- function used to
 	convert Elisp objects to Beanshell script versions of the
 	equivalent Java objects.</li>
       </ul>
@@ -321,13 +321,13 @@ cannot rely on trusty <code>System.out.println</code>.  For this,
 there is a <code>Logger</code> class that writes to a file that can be
 invoked from the <code>ConnectionImpl</code>.  To wire up the file
 that the logger dumps to, set the variable
-<code>jdee-juci-logger-filename</code> on the Elisp side with the log
+<code>jde-juci-logger-filename</code> on the Elisp side with the log
 filename.  When a JUCI connection is created, if this variable is set,
 the <code>setLoggerFilename</code> method on the connection will be
 called and this enables the logger.</p>
 
 <p> On the Elisp side, every statement sent to the Beanshell for
-execution is copied to the <code>*jdee-log*</code> buffer.</p>
+execution is copied to the <code>*jde-log*</code> buffer.</p>
 
 <p> Some attempt is made to preserve errors/exceptions and send them
 back across the connection boundary.  Usually an error/exception will

@@ -227,7 +227,7 @@ public class InterfaceFactory extends MethodFactory {
   public void dumpExpression(PrintWriter out, boolean truncate) {
     
     final StringBuffer buf =
-      new StringBuffer("(jdee-wiz-gen-implementation-methods (list ");
+      new StringBuffer("(jde-wiz-gen-implementation-methods (list ");
     
     signatures.visit(new SignatureVisitor() {
         public void visit(Signature sig , boolean firstOfClass) {

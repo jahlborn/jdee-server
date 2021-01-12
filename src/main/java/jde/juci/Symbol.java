@@ -52,7 +52,7 @@ public class Symbol
   /**
    * <p>Convert a camel-case java name (such as <code>jdeDoWorkNow</code>) to
    * an elisp name with constituents separated by dashes
-   * (<code>jdee-do-work-now</code>).</p>
+   * (<code>jde-do-work-now</code>).</p>
    *
    * <p>In general, convert a possibly fully-qualified java name to an elisp
    * name, by the following algorithm:</p>
@@ -65,7 +65,7 @@ public class Symbol
    * </ul>
    *
    * <p>For example, the following java names all convert to the elisp name
-   * <code>jdee-foo-call-left-right</code>:</p>
+   * <code>jde-foo-call-left-right</code>:</p>
    *
    * <ul>
    *   <li><code>jdeFooCallLeftRight</code></li>

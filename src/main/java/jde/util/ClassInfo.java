@@ -29,7 +29,7 @@ import java.lang.reflect.*;
 import jde.util.DynamicClassLoader;
 
 /**
- * This class provides information about classes on jdee-global-classpath.
+ * This class provides information about classes on jde-global-classpath.
  *
  * @author Rodrigo Reyes (reyes@chez.com),
  * @author Javier Lopez (jslopez@forumsys.com)

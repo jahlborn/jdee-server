@@ -37,7 +37,7 @@ import java.lang.reflect.InvocationTargetException;
  *
  * @author <a href="mailto:jslopez@alum.mit.edu"></a>
  * @version 1.0
- * @since jdee-2.2.8beta5
+ * @since jde-2.2.8beta5
  */
 public class CompileServer {
     private static Class compiler;

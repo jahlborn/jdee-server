@@ -41,7 +41,7 @@ import java.util.StringTokenizer;
  *
  * @author <a href="mailto:jslopez@alum.mit.edu"></a>
  * @version 1.0
- * @since jdee-2.2.9beta5
+ * @since jde-2.2.9beta5
  */
 public class AntServer {
     
@@ -51,7 +51,7 @@ public class AntServer {
             ant = ant.forName("org.apache.tools.ant.Main");
         } catch (ClassNotFoundException e) {
             System.out.println("You need ant.jar in the beanshell classpath.");
-            System.out.println("The beanshell uses jdee-global-classpath or ");
+            System.out.println("The beanshell uses jde-global-classpath or ");
             System.out.println("the environment variable CLASSPATH.");
         }
     }

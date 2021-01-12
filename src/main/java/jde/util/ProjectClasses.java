@@ -41,7 +41,7 @@ class ProjectClasses {
   private String classPath;
 
   // the boot classpath is loaded at startup.
-  private static ArrayList<ClassPathEntry> bootClassPathEntries = new ArrayList<>();
+  private static ArrayList<ClassPathEntry> bootClassPathEntries = new ArrayList<ClassPathEntry>();
 
   static {
     try {
@@ -125,7 +125,7 @@ class ProjectClasses {
    * @exception IOException if an error occurs
    */
   List<String> getClassNames(String unqualifiedName) throws IOException {
-    List<String> rv = new ArrayList<>();
+    List<String> rv = new ArrayList<String>();
     for (ClassPathEntry cpe : classPathEntries) {
       @SuppressWarnings("unchecked")
       List<String> classNames = (List<String>) cpe.getClassNames(unqualifiedName);

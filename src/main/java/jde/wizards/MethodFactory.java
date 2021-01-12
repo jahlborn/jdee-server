@@ -201,10 +201,10 @@ public class MethodFactory implements ClassRegistry {
    * implementation of a specified method. The
    * List form is of the form
    *
-   *   <code>(jdee-wiz-gen-method ... )</code>
+   *   <code>(jde-wiz-gen-method ... )</code>
    *
-   * where <code>jdee-wiz-gen-method</code> is a
-   * function defined by the JDEE's jdee-wiz package.
+   * where <code>jde-wiz-gen-method</code> is a
+   * function defined by the JDEE's jde-wiz package.
    *
    * @param sig a <code>Signature</code> value
    * @return a <code>String</code> value
@@ -212,7 +212,7 @@ public class MethodFactory implements ClassRegistry {
   public String getMethodSkeletonExpression (Signature sig)  {
     StringBuffer res = new StringBuffer();
 
-    res.append ("(jdee-wiz-gen-method");
+    res.append ("(jde-wiz-gen-method");
     res.append (" \"" + sig.getModifiers() + "\"");
     res.append (" \"" + sig.getReturnBaseType() + "\"");
     res.append (" \"" + sig.getMethod().getName() + "\"");

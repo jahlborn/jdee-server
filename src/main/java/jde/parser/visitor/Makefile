@@ -5,7 +5,7 @@
 
 #### Java compiler settings
 JAVAC       = //e/jikes/jikes
-JAVAC_FLAGS = -classpath "d:/jdee-dev/jde/java/classes;e:/jdk1.2/jre/lib/rt.jar" -g -d d:/jdee-dev/jde/java/classes +E
+JAVAC_FLAGS = -classpath "d:/jde-dev/jde/java/classes;e:/jdk1.2/jre/lib/rt.jar" -g -d d:/jde-dev/jde/java/classes +E
 
 #### Build Rules
 %.class: %.java

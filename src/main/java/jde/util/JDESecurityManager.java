@@ -34,7 +34,7 @@ import java.security.Permission;
  *
  * @author <a href="mailto:jslopez@forumsys.com">Javier S. Lopez</a>
  * @version 1.0
- * @since jdee-2.2.9beta5
+ * @since jde-2.2.9beta5
  */
 public class JDESecurityManager extends SecurityManager {
     public JDESecurityManager (){

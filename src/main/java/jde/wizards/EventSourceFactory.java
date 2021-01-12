@@ -104,7 +104,7 @@ public class EventSourceFactory extends InterfaceFactory
   public void dumpExpression(PrintWriter out, boolean truncate) {
     
     final StringBuffer buf =
-      new StringBuffer("(jdee-wiz-gen-event-source (list ");
+      new StringBuffer("(jde-wiz-gen-event-source (list ");
 
     try {
       registerImport(Class.forName("java.util.Vector"));
@@ -112,7 +112,7 @@ public class EventSourceFactory extends InterfaceFactory
     } catch( Exception ex ) {
     }
 
-    buf.append ("(quote (jdee-wiz-gen-listener-registry");
+    buf.append ("(quote (jde-wiz-gen-listener-registry");
     buf.append (" \"" + listenerClassNameFQN + "\"))");
 
     SignatureContainer sigs = getSignatures();
@@ -154,7 +154,7 @@ public class EventSourceFactory extends InterfaceFactory
     String methNameUpCase = temp.toString();
 
     StringBuffer buf = new StringBuffer();
-    buf.append ("(jdee-wiz-gen-event-source-fire-method");
+    buf.append ("(jde-wiz-gen-event-source-fire-method");
     buf.append (" \"" + listenerClassNameFQN + "\"");
     buf.append (" \"" + methName + "\"");
     buf.append (" \"" + sig.baseName(sig.getMethod().getReturnType()) + "\"");

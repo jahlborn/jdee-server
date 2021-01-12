@@ -81,7 +81,7 @@ public class LispWriterTest {
 
     @Test
     public void testMapAlist() {
-        Map<Object,Object> m = new LinkedHashMap<>();
+        Map<Object,Object> m = new LinkedHashMap<Object,Object>();
         m.put("foo", new Symbol("bar"));
         m.put("baz", new Symbol("quux"));
         lwriter.writeAlist(m);
@@ -135,7 +135,7 @@ public class LispWriterTest {
     @Test
     public void testWriteJdeeJuciInvokeElispForm() {
         List eval = new ArrayList();
-        eval.add(new Symbol("jdee-juci-invoke-elisp"));
+        eval.add(new Symbol("jde-juci-invoke-elisp"));
 
         List form = new ArrayList();
         form.add(new Symbol("message"));
@@ -143,7 +143,7 @@ public class LispWriterTest {
 
         eval.add(form);
         lwriter.writeForm(eval);
-        assertEquals("(jdee-juci-invoke-elisp '(message \"hello %s\" \"nick\"))", output.toString());
+        assertEquals("(jde-juci-invoke-elisp '(message \"hello %s\" \"nick\"))", output.toString());
     }
 
 }

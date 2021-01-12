@@ -78,7 +78,7 @@ public class ConnectionImplTest {
                 1,
                 2,
                 new Quoted(Arrays.asList(3, 4)))));
-        assertEquals("(jdee-juci-invoke-elisp '(jde-juci-connection-impl-test-call-test-do-it '(apply '+ 1 2 '(3 4))))",
+        assertEquals("(jde-juci-invoke-elisp '(jde-juci-connection-impl-test-call-test-do-it '(apply '+ 1 2 '(3 4))))",
                 output.toString().trim());
         conn.end();
     }

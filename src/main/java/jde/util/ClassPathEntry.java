@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2001 Eric D. Friedman (eric@hfriedman.rdsl.lmi.net)
  *
  * This program is free software; you can redistribute it and/or modify
@@ -47,8 +47,8 @@ abstract class ClassPathEntry {
     /** a flag indicating whether this instance has been loaded or not */
     protected boolean loaded = false;
 
-    private static Map<File, ClassPathEntry> entryMap = new HashMap<>();
-    
+    private static Map<File, ClassPathEntry> entryMap = new HashMap<File, ClassPathEntry>();
+
     ClassPathEntry () {
     }
 
@@ -65,7 +65,7 @@ abstract class ClassPathEntry {
      */
     static ClassPathEntry instanceForEntry(File resource) throws IOException {
         ClassPathEntry entry;
-        
+
         if (entryMap.containsKey(resource)) {
             entry = entryMap.get(resource);
         } else {
@@ -129,7 +129,7 @@ abstract class ClassPathEntry {
         }
         nameToClassMap.put(unqualified, qualifiedName);
     }
-    
+
     /**
      * Returns the list of qualified names that map to the specified
      * unqualified name.  Lazily loads the classes.

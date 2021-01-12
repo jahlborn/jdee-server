@@ -28,7 +28,7 @@ import java.util.*;
 /**
  * This class provides various utility methods.
  *
- * @author Len Trigg (trigg@cs.waikato.ac.nz) 
+ * @author Len Trigg (trigg@cs.waikato.ac.nz)
  * @author Paul Kinnucan (paulk@mathworks.com)
  * @author Matt Conway (Matt_Conway@i2.com )
  * @author Eric D. Friedman (eric@hfriedman.rdsl.lmi.net)
@@ -38,14 +38,14 @@ public class JdeUtilities {
 
   /** A cache of the items that are important across projects,
    * indexed by the project name */
-  private static Map<String,ProjectClasses> projectCache = new HashMap<>();
+  private static Map<String,ProjectClasses> projectCache = new HashMap<String,ProjectClasses>();
 
   /** The current project so that callers need not pass in the
       project name every time.  This is convenient, but not
       threadsafe.  If we need thread saftey, we can go change all
       the emacs lisp callers to always pass in the project name */
   private static String currentProjectName = "default";
-    
+
   // Have a default one just in case
   static {
     try {
@@ -91,7 +91,7 @@ public class JdeUtilities {
   public static String getCurrentProjectName() {
     return currentProjectName;
   }
-    
+
   public static ProjectClasses getCurrentProjectClass() {
     return projectCache.get(currentProjectName);
   }
@@ -108,7 +108,8 @@ public class JdeUtilities {
         dcl.loadClass( fqn );
         System.out.println( "\"" + fqn + "\"");
         return;
-      } catch (ClassNotFoundException | NoClassDefFoundError e) {
+      } catch (ClassNotFoundException e) {
+      } catch (NoClassDefFoundError e) {
       } catch (Exception e) {
         System.out.println("(error \"Trying to load " + fqn +
                            " caused a Java exception: " + e + "\")");
@@ -132,7 +133,7 @@ public class JdeUtilities {
         fqn = null;
       }
     }
-    System.out.println(NIL);              
+    System.out.println(NIL);
   }//met
 
 
@@ -163,7 +164,7 @@ public class JdeUtilities {
   public static void updateClassList() {
     updateClassList(null);
   }
- 
+
   /**
    * Looks up an unqualified class name in the class path to find possible
    * fully qualified matches.  Given `List,' this will find
